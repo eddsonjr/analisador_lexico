@@ -21,3 +21,4 @@ print : Palavra reservada print
 ( : Inicio expressao
 i : Identificador
 ) : Fim expressao
+ERROR: LEXEMA NAO FAZ PARTE DA LINGUAGEM: ”

@@ -285,6 +285,22 @@ private void imprimir(String descricao, String lexema) {
 }
 
 
+   private void PrintError() {
+        StringBuilder textLine = new StringBuilder();
+        String mainError = "ERROR: LEXEMA NAO FAZ PARTE DA LINGUAGEM: ";
+        String lexemaError = new String(yytext());
+
+        textLine.append(mainError);
+        textLine.append(lexemaError);
+        System.err.println(textLine.toString());
+
+        Arquivo arquivo = new Arquivo("./output.txt");
+        arquivo.setConteudoArquivo(textLine.toString());
+        arquivo.salvarArquivo();
+        
+   }
+
+
 
   /**
    * Creates a new scanner
@@ -601,7 +617,8 @@ private void imprimir(String descricao, String lexema) {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { throw new RuntimeException("Caractere inválido: " + yytext());
+            { PrintError();
+    throw new RuntimeException("RUNTIME ERROR>> Lexema invalido: " + yytext());
             }
           case 32: break;
           case 2: 
