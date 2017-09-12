@@ -1,12 +1,27 @@
 
-package br.com.johnidouglas.lexicalanalyzer;
+package analisador_lexico;
 
 %%
 
 %{
 
 private void imprimir(String descricao, String lexema) {
-    System.out.println(lexema + " - " + descricao);
+    System.out.println(lexema + " : " + descricao);
+    
+    //criando uma string que ira receber tanto a descricao quanto o lexema
+    //para depois colocar 
+    StringBuilder textLine = new StringBuilder();
+    textLine.append(lexema);
+    textLine.append(" : ");
+    textLine.append(descricao);
+    textLine.append("\n");
+
+    Arquivo arquivo = new Arquivo("./output.txt");
+    arquivo.setConteudoArquivo(textLine.toString());
+
+    arquivo.salvarArquivo();
+    
+
 }
 
 %}
@@ -17,17 +32,73 @@ private void imprimir(String descricao, String lexema) {
 
 
 BRANCO = [\n| |\t|\r]
-ID = [_|a-z|A-Z][a-z|A-Z|0-9|_]*
-SOMA = "+"
+IDENTIFICADOR = [|a-z|A-Z][a-z|A-Z|0-9|]*
 INTEIRO = 0|[1-9][0-9]*
+EXPRESSAOLITERAL = "(.*?)"
+
+
+SOMA = "+"
+SUBTRACAO = "-"
+MULTIPLICACAO = "*"
+DIVISAO = "/"
+
+
+ATRIBUICAO = "="
+ABERTURABLOCO = "{"
+FECHAMENTOBLOCO = "}"
+ABERTURAPARENTESES = "("
+FECHAMENTOPARENTESES = ")"
+COMENTARIO = "//"
+
+
+MENOR = "<"
+MAIOR = ">"
+MENORIGUAL = "<="
+MAIORIGUAL = ">="
+IGUAL = "=="
+DIFERENTE = "!="
+
+
 
 %%
 
 "if"                         { imprimir("Palavra reservada if", yytext()); }
+"elseif"                     { imprimir("Palavra reservada elseif", yytext()); }
+"else"                       { imprimir("Palavra reservada else", yytext()); }
 "then"                       { imprimir("Palavra reservada then", yytext()); }
-{BRANCO}                     { imprimir("Espaço em branco", yytext()); }
-{ID}                         { imprimir("Identificador", yytext()); }
-{SOMA}                         { imprimir("Operador de soma", yytext()); }
-{INTEIRO}                     { imprimir("Número Inteiro", yytext()); }
+"int"                        { imprimir("Palavra reservada int", yytext()); }
+"real"                       { imprimir("Palavra reservada real", yytext()); }
+"for"                        { imprimir("Palavra reservada for", yytext()); }
+"string"                     { imprimir("Palavra reservada string", yytext()); }
+"print"                      { imprimir("Palavra reservada print", yytext()); }
+"read"                       { imprimir("Palavra reservada read", yytext()); }
 
-. { throw new RuntimeException("Caractere inválido " + yytext()); }
+
+
+
+{BRANCO}                    { imprimir("Espaco em branco", yytext()); }
+{IDENTIFICADOR}             { imprimir("Identificador", yytext()); }
+{INTEIRO}                   { imprimir("Número Inteiro", yytext()); }
+{EXPRESSAOLITERAL}          { imprimir("Expressao literal", yytext());}
+
+
+
+{SOMA}                      { imprimir("Operador de soma", yytext()); }
+{SUBTRACAO}                 { imprimir("Operador de subtracao", yytext()); }
+{MULTIPLICACAO}             { imprimir("Operador de multiplicacao", yytext());}
+{DIVISAO}                   { imprimir("Operador de divisao", yytext());}
+{ATRIBUICAO}                { imprimir("Operador de atribuicao", yytext());}
+{MENOR}                     { imprimir("Operador de menor", yytext());}
+{MAIOR}                     { imprimir("Operador de maior", yytext());}
+{MENORIGUAL}                { imprimir("Operador de menor ou igual", yytext());}
+{MAIORIGUAL}                { imprimir("Operador de maior ou igual", yytext());}
+{IGUAL}                     { imprimir("Operador de igualdade", yytext());}
+{DIFERENTE}                 { imprimir("Operador de diferente de", yytext());}
+{ABERTURABLOCO}             { imprimir("Abertura bloco", yytext());}
+{FECHAMENTOBLOCO}           { imprimir("Fechamento bloco", yytext());}
+{ABERTURAPARENTESES}        { imprimir("Inicio expressao", yytext());}
+{FECHAMENTOPARENTESES}      { imprimir("Fim expressao", yytext());}
+{COMENTARIO}                { imprimir("Comentario", yytext());}
+
+
+. { throw new RuntimeException("Caractere inválido: " + yytext()); }

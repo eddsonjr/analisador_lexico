@@ -26,9 +26,6 @@ public class Analisador_lexico {
 
     public static void main(String[] args) throws IOException {
         
-        
-        //String rootPath = Paths.get("").toAbsolutePath(). toString();
-        //String subPath = "/src/analisador_lexico/";
         String rootPath = "./src/analisador_lexico/";
         String file = rootPath + "language.lex";
         System.out.println(file);
@@ -37,9 +34,13 @@ public class Analisador_lexico {
 
         jflex.Main.generate(sourceCode);
         
+        //Criando um objeto do tipo arquivo para ler de arquivos txt 
+        Arquivo arquivo = new Arquivo("./program_media.txt");
+       
         
         
-         String expr = "if 2 + 3+a then";
+        String expr = arquivo.lerConteudoArquivo();
+        
          
         LexicalAnalyzer lexical = new LexicalAnalyzer(new StringReader(expr));
         lexical.yylex();

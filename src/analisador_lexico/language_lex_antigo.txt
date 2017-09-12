@@ -1,5 +1,6 @@
 
-package br.com.johnidouglas.lexicalanalyzer;
+
+package analisador_lexico;
 
 %%
 

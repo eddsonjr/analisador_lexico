@@ -1,0 +1,115 @@
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package analisador_lexico;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+
+public class Arquivo {
+    
+    private String fileName;
+    private String conteudoArquivo = new String(); 
+    
+    private BufferedReader br = null;
+    private FileReader fr = null;
+    private Writer writer = null;
+    
+    
+    
+    public Arquivo(String fileName){
+        this.fileName = fileName;
+        
+    }
+    
+    public Arquivo(String fileName, String conteudoArquivo){
+        this.fileName = fileName;
+        this.conteudoArquivo = conteudoArquivo;
+    }
+    
+    
+    
+    
+    public String lerConteudoArquivo() {
+        try{
+            fr = new FileReader(this.fileName);
+            br = new BufferedReader(fr);
+            
+            
+            while ((this.conteudoArquivo = br.readLine()) != null) {
+		this.conteudoArquivo += this.conteudoArquivo;
+                
+            }
+            
+        }catch (IOException e) {
+            System.err.println("ERRO AO LER OU CARREGAR ARQUIVO!");
+            e.printStackTrace();
+        } finally {
+
+		try {
+
+                    if (br != null)
+                        br.close();
+
+		if (fr != null)
+			fr.close();
+                } catch (IOException ex) {
+                    System.err.println("ERRO AO FECHAR ARQUIVO/BUFFER");
+                    ex.printStackTrace();
+
+		}
+
+	}
+        return this.conteudoArquivo;
+    }
+    
+    
+    public void salvarArquivo() {
+        try {
+            writer = new BufferedWriter(new OutputStreamWriter(
+            new FileOutputStream(this.fileName), "utf-8"));
+            writer.write(this.conteudoArquivo);
+        } catch (IOException e) {
+            System.err.println("ERRO AO SALVAR ARQUIVO!");
+            e.printStackTrace();
+        } finally {
+             try {writer.close(); 
+             
+             }catch (Exception e) {
+                System.err.println("ERRO AO FECHAR ARQUIVO DEPOIS DE CRIADO!");
+                e.printStackTrace();
+             }
+        }
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

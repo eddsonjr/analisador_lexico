@@ -1,0 +1,23 @@
+real : Palavra reservada real
+  : Espaco em branco
+i : Identificador
+  : Espaco em branco
+= : Operador de atribuicao
+  : Espaco em branco
+( : Inicio expressao
+( : Inicio expressao
+2 : Número Inteiro
++ : Operador de soma
+4 : Número Inteiro
++ : Operador de soma
+7 : Número Inteiro
+) : Fim expressao
+/ : Operador de divisao
+3 : Número Inteiro
+) : Fim expressao
+
+ : Espaco em branco
+print : Palavra reservada print
+( : Inicio expressao
+i : Identificador
+) : Fim expressao
