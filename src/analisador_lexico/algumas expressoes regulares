@@ -1,0 +1,37 @@
+-> Expressoes para verificar valores inteiros e flutuantes
+INTEIRO = [+-]?(0|[1-9][0-9]*)
+REAL =    [+-]?([0-9]*[.])[0-9]+
+
+
+
+
+->Expressao para verificar a soma de dois valores interios, 
+sendo que os valores podem ter ou nao sinal de - na frente do número
+e após o sinal de soma "+", o outro valor pode ou nao estar cercado por 
+parenteses
+([+-]?(0|[1-9][0-9]*)[+]\(?([+-]?(0|[1-9][0-9]*))\)?)
+
+Alguns exemplos:
+2+3
+2+(-2)
+-2+3
+-2+3
+
+
+
+->Expressao para verificar a subtracao de dois valores interios, 
+sendo que os valores podem ter ou nao sinal de - na frente do número e após 
+o sinal de subtracao "-", o outro valor pode ou nao estar cercado por 
+parenteses
+([-]?(0|[1-9][0-9]*)[-]\(?([-]?(0|[1-9][0-9]*))\)?)
+
+Alguns exemplos:
+-2-3
+-2-(-2)
+2-1
+(2-1)
+
+
+
+
+

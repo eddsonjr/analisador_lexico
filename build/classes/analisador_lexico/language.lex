@@ -49,8 +49,10 @@ private void imprimir(String descricao, String lexema) {
 
 BRANCO = [\n| |\t|\r]
 IDENTIFICADOR = [|a-z|A-Z][a-z|A-Z|0-9|]*
-INTEIRO = 0|[1-9][0-9]*
+INTEIRO = (0|[1-9][0-9]*)
+REAL =    ([0-9]*[.][0-9]+)
 EXPRESSAOLITERAL = "(.*?)"
+
 
 
 SOMA = "+"
@@ -75,6 +77,9 @@ IGUAL = "=="
 DIFERENTE = "!="
 
 
+TERMINADOR = ";"
+
+
 
 %%
 
@@ -96,6 +101,7 @@ DIFERENTE = "!="
 {IDENTIFICADOR}             { imprimir("Identificador", yytext()); }
 {INTEIRO}                   { imprimir("Número Inteiro", yytext()); }
 {EXPRESSAOLITERAL}          { imprimir("Expressao literal", yytext());}
+{REAL}                      { imprimir("Número Real", yytext());}
 
 
 
@@ -115,6 +121,9 @@ DIFERENTE = "!="
 {ABERTURAPARENTESES}        { imprimir("Inicio expressao", yytext());}
 {FECHAMENTOPARENTESES}      { imprimir("Fim expressao", yytext());}
 {COMENTARIO}                { imprimir("Comentario", yytext());}
+{TERMINADOR}                { imprimir("Terminador de instrucao", yytext());}
+
+
 
 
 . { 
