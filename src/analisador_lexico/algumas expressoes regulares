@@ -35,3 +35,22 @@ Alguns exemplos:
 
 
 
+
+
+
+
+
+
+
+
+Expressoes de teste:
+(-?[0-9]+(([.]?)([0-9]+)?)) -> tentativa de quaisquer numeros com ou sem sinal
+                                com ou sem . (inteiros ou reais)
+
+(((-{1})?(\d+)[.](\d+))|((-{1})?\d+)) -> tentativa de identificar numeros 
+                                    inteiros ou reais com ou sem sinal,
+                                    identificando somente um sinal e tambem
+                                    um unico ponto
+
+
+

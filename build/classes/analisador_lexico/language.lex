@@ -49,15 +49,16 @@ private void imprimir(String descricao, String lexema) {
 
 BRANCO = [\n| |\t|\r]
 IDENTIFICADOR = [|a-z|A-Z][a-z|A-Z|0-9|]*
-INTEIRO = (0|[1-9][0-9]*)
-REAL =    ([0-9]*[.][0-9]+)
-EXPRESSAOLITERAL = "(.*?)"
+INTEIRO = ((-{1})?\d+)
+REAL =    ((-{1})?(\d+)[.](\d+))
+EXPRESSAOLITERAL = ("(.*?)")
+EXPRESSAOLITERALCOMVALOR = ("(.*?)"[#]((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[#]("(.*?)"))
 
 
 
-SOMA = "+"
-SUBTRACAO = "-"
-MULTIPLICACAO = "*"
+SOMA = ((((-{1})?(\d+)[.](\d+))|((-{1})?\d+))[+]([(]?((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[)]?))
+SUBTRACAO = ((((-{1})?(\d+)[.](\d+))|((-{1})?\d+))[-]([(]?((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[)]?))
+MULTIPLICACAO = ((((-{1})?(|\d+)[.](\d+))|((-{1})?\d+))[*]([(]?((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[)]?))
 DIVISAO = "/"
 
 
