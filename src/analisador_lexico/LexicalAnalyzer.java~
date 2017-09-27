@@ -34,12 +34,22 @@ class LexicalAnalyzer {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\1\1\1\1\43\1\43\1\1\22\0\1\1\1\23\6\0"+
-    "\1\7\1\12\1\10\1\13\1\0\1\14\1\6\1\15\1\5\11\4"+
-    "\1\0\1\24\1\21\1\16\1\22\1\11\1\0\32\2\6\0\1\36"+
-    "\2\2\1\42\1\27\1\26\1\40\1\33\1\25\2\2\1\30\1\2"+
-    "\1\34\1\37\1\41\1\2\1\35\1\31\1\32\6\2\1\17\1\3"+
-    "\1\20\7\0\1\43\u1fa2\0\1\43\1\43\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
+    "\11\0\1\1\1\11\1\12\1\12\1\11\22\0\1\1\1\25\1\0"+
+    "\1\0\3\0\1\10\1\21\1\22\1\14\1\13\1\0\1\5\1\7"+
+    "\1\15\12\4\1\0\1\26\1\23\1\16\1\24\2\0\32\2\6\0"+
+    "\1\40\2\2\1\44\1\31\1\30\1\42\1\35\1\27\2\2\1\32"+
+    "\1\2\1\36\1\41\1\43\1\2\1\37\1\33\1\34\6\2\1\17"+
+    "\1\3\1\20\7\0\1\12\u05da\0\12\6\206\0\12\6\306\0\12\6"+
+    "\u019c\0\12\6\166\0\12\6\166\0\12\6\166\0\12\6\166\0\12\6"+
+    "\166\0\12\6\166\0\12\6\166\0\12\6\166\0\12\6\166\0\12\6"+
+    "\140\0\12\6\166\0\12\6\106\0\12\6\u0116\0\12\6\106\0\12\6"+
+    "\u0746\0\12\6\46\0\12\6\u012c\0\12\6\200\0\12\6\246\0\12\6"+
+    "\6\0\12\6\266\0\12\6\126\0\12\6\206\0\12\6\6\0\12\6"+
+    "\u03ce\0\1\12\1\12\u85f6\0\12\6\u02a6\0\12\6\46\0\12\6\306\0"+
+    "\12\6\26\0\12\6\126\0\12\6\u0196\0\12\6\u5316\0\12\6\u0586\0"+
+    "\12\6\u0bbc\0\12\6\200\0\12\6\74\0\12\6\220\0\12\6\u0116\0"+
+    "\12\6\u01d6\0\12\6\u0176\0\12\6\146\0\12\6\u0216\0\12\6\u5176\0"+
+    "\12\6\346\0\12\6\u6c74\0\62\6\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\u280f\0";
 
   /** 
    * Translates characters to character classes
@@ -52,15 +62,15 @@ class LexicalAnalyzer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\1\2\2\4\1\1\1\5"+
+    "\1\0\1\1\1\2\1\3\1\2\1\4\1\5\1\1"+
     "\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15"+
-    "\1\16\1\17\1\1\1\20\7\3\2\0\1\21\1\0"+
-    "\1\22\1\23\1\24\1\25\1\26\1\27\7\3\1\0"+
-    "\1\30\1\31\5\3\1\0\1\32\1\3\1\33\1\34"+
-    "\1\35\1\3\1\36\2\3\1\37\1\40\1\41";
+    "\1\16\1\17\1\1\1\20\7\3\2\0\1\21\1\22"+
+    "\1\23\1\24\1\25\1\26\1\27\7\3\1\30\1\31"+
+    "\1\32\5\3\1\33\1\3\1\34\1\35\1\36\3\3"+
+    "\1\37\1\40\1\41";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[66];
+    int [] result = new int[62];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -85,18 +95,17 @@ class LexicalAnalyzer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\44\0\44\0\110\0\110\0\154\0\220\0\264"+
-    "\0\330\0\44\0\44\0\44\0\44\0\374\0\u0120\0\44"+
-    "\0\44\0\u0144\0\u0168\0\u018c\0\44\0\u01b0\0\u01d4\0\u01f8"+
-    "\0\u021c\0\u0240\0\u0264\0\u0288\0\264\0\220\0\264\0\u02ac"+
-    "\0\44\0\44\0\44\0\44\0\44\0\110\0\u02d0\0\u02f4"+
-    "\0\u0318\0\u033c\0\u0360\0\u0384\0\u03a8\0\u03cc\0\110\0\110"+
-    "\0\u03f0\0\u0414\0\u0438\0\u045c\0\u0480\0\u04a4\0\u04c8\0\u04ec"+
-    "\0\110\0\110\0\110\0\u0510\0\44\0\u0534\0\u0558\0\110"+
-    "\0\110\0\110";
+    "\0\0\0\45\0\45\0\112\0\112\0\157\0\224\0\271"+
+    "\0\45\0\45\0\336\0\u0103\0\45\0\45\0\45\0\45"+
+    "\0\u0128\0\u014d\0\u0172\0\45\0\u0197\0\u01bc\0\u01e1\0\u0206"+
+    "\0\u022b\0\u0250\0\u0275\0\u029a\0\271\0\271\0\45\0\45"+
+    "\0\45\0\45\0\45\0\112\0\u02bf\0\u02e4\0\u0309\0\u032e"+
+    "\0\u0353\0\u0378\0\u039d\0\u029a\0\112\0\112\0\u03c2\0\u03e7"+
+    "\0\u040c\0\u0431\0\u0456\0\u047b\0\u04a0\0\112\0\112\0\112"+
+    "\0\u04c5\0\u04ea\0\u050f\0\112\0\112\0\112";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[66];
+    int [] result = new int[62];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -119,35 +128,36 @@ class LexicalAnalyzer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11"+
-    "\1\12\1\2\1\13\1\14\1\15\1\16\1\17\1\20"+
-    "\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30"+
-    "\1\4\1\31\1\32\2\4\1\33\3\4\1\34\1\4"+
-    "\47\0\4\4\17\0\16\4\5\0\2\6\1\35\41\0"+
-    "\2\36\1\35\41\0\2\37\44\0\1\40\52\0\1\41"+
-    "\44\0\1\42\43\0\1\43\43\0\1\44\43\0\1\45"+
-    "\27\0\4\4\17\0\1\4\1\46\5\4\1\47\6\4"+
-    "\3\0\4\4\17\0\12\4\1\50\3\4\3\0\4\4"+
-    "\17\0\3\4\1\51\12\4\3\0\4\4\17\0\5\4"+
-    "\1\52\10\4\3\0\4\4\17\0\6\4\1\53\7\4"+
-    "\3\0\4\4\17\0\2\4\1\54\13\4\3\0\4\4"+
-    "\17\0\10\4\1\55\5\4\11\0\1\56\35\0\4\4"+
-    "\17\0\5\4\1\57\10\4\3\0\4\4\17\0\10\4"+
-    "\1\60\5\4\3\0\4\4\17\0\4\4\1\61\11\4"+
-    "\3\0\4\4\17\0\10\4\1\62\5\4\3\0\4\4"+
-    "\17\0\2\4\1\63\13\4\3\0\4\4\17\0\11\4"+
-    "\1\64\4\4\3\0\4\4\17\0\1\65\15\4\12\0"+
-    "\1\66\34\0\4\4\17\0\2\4\1\67\13\4\3\0"+
-    "\4\4\17\0\1\70\15\4\3\0\4\4\17\0\7\4"+
-    "\1\71\6\4\3\0\4\4\17\0\3\4\1\72\11\4"+
-    "\1\73\3\0\4\4\17\0\7\4\1\74\6\4\13\0"+
-    "\1\75\33\0\4\4\17\0\1\76\15\4\3\0\4\4"+
-    "\17\0\7\4\1\77\6\4\3\0\4\4\17\0\5\4"+
-    "\1\100\10\4\3\0\4\4\17\0\1\4\1\101\14\4"+
-    "\3\0\4\4\17\0\13\4\1\102\2\4\1\0";
+    "\1\2\1\3\1\4\1\5\1\6\1\7\1\6\1\2"+
+    "\1\10\1\3\1\0\1\11\1\12\1\13\1\14\1\15"+
+    "\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25"+
+    "\1\26\1\27\1\4\1\30\1\31\2\4\1\32\3\4"+
+    "\1\33\1\4\47\0\3\4\22\0\16\4\4\0\1\6"+
+    "\1\0\1\6\1\34\41\0\1\6\1\0\1\6\36\0"+
+    "\10\35\1\36\2\0\32\35\15\0\1\37\45\0\1\40"+
+    "\44\0\1\41\44\0\1\42\44\0\1\43\30\0\3\4"+
+    "\22\0\1\4\1\44\5\4\1\45\6\4\2\0\3\4"+
+    "\22\0\12\4\1\46\3\4\2\0\3\4\22\0\3\4"+
+    "\1\47\12\4\2\0\3\4\22\0\5\4\1\50\10\4"+
+    "\2\0\3\4\22\0\6\4\1\51\7\4\2\0\3\4"+
+    "\22\0\2\4\1\52\13\4\2\0\3\4\22\0\10\4"+
+    "\1\53\5\4\4\0\1\54\1\0\1\54\40\0\3\4"+
+    "\22\0\5\4\1\55\10\4\2\0\3\4\22\0\10\4"+
+    "\1\56\5\4\2\0\3\4\22\0\4\4\1\57\11\4"+
+    "\2\0\3\4\22\0\10\4\1\60\5\4\2\0\3\4"+
+    "\22\0\2\4\1\61\13\4\2\0\3\4\22\0\11\4"+
+    "\1\62\4\4\2\0\3\4\22\0\1\63\15\4\2\0"+
+    "\3\4\22\0\2\4\1\64\13\4\2\0\3\4\22\0"+
+    "\1\65\15\4\2\0\3\4\22\0\7\4\1\66\6\4"+
+    "\2\0\3\4\22\0\3\4\1\67\11\4\1\70\2\0"+
+    "\3\4\22\0\7\4\1\71\6\4\2\0\3\4\22\0"+
+    "\1\72\15\4\2\0\3\4\22\0\7\4\1\73\6\4"+
+    "\2\0\3\4\22\0\5\4\1\74\10\4\2\0\3\4"+
+    "\22\0\1\4\1\75\14\4\2\0\3\4\22\0\13\4"+
+    "\1\76\2\4";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[1404];
+    int [] result = new int[1332];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -185,12 +195,11 @@ class LexicalAnalyzer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\6\1\4\11\2\1\2\11\3\1\1\11"+
-    "\7\1\2\0\1\1\1\0\5\11\10\1\1\0\7\1"+
-    "\1\0\6\1\1\11\5\1";
+    "\1\0\2\11\5\1\2\11\2\1\4\11\3\1\1\11"+
+    "\7\1\2\0\1\1\5\11\33\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[66];
+    int [] result = new int[62];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -324,7 +333,7 @@ private void imprimir(String descricao, String lexema) {
     char [] map = new char[0x110000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 146) {
+    while (i < 342) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -636,39 +645,39 @@ private void imprimir(String descricao, String lexema) {
             }
           case 37: break;
           case 5: 
-            { imprimir("Inicio expressao", yytext());
+            { imprimir("Operacao de subtracao", yytext());
             }
           case 38: break;
           case 6: 
-            { imprimir("Operador de multiplicacao", yytext());
+            { imprimir("Operacao de soma", yytext());
             }
           case 39: break;
           case 7: 
-            { imprimir("Fim expressao", yytext());
+            { imprimir("Operacao de multiplicacao", yytext());
             }
           case 40: break;
           case 8: 
-            { imprimir("Operador de soma", yytext());
+            { imprimir("Operacao de divisao", yytext());
             }
           case 41: break;
           case 9: 
-            { imprimir("Operador de subtracao", yytext());
+            { imprimir("Operador de atribuicao", yytext());
             }
           case 42: break;
           case 10: 
-            { imprimir("Operador de divisao", yytext());
+            { imprimir("Abertura bloco", yytext());
             }
           case 43: break;
           case 11: 
-            { imprimir("Operador de atribuicao", yytext());
+            { imprimir("Fechamento bloco", yytext());
             }
           case 44: break;
           case 12: 
-            { imprimir("Abertura bloco", yytext());
+            { imprimir("Inicio expressao", yytext());
             }
           case 45: break;
           case 13: 
-            { imprimir("Fechamento bloco", yytext());
+            { imprimir("Fim expressao", yytext());
             }
           case 46: break;
           case 14: 
@@ -684,7 +693,7 @@ private void imprimir(String descricao, String lexema) {
             }
           case 49: break;
           case 17: 
-            { imprimir("Número Real", yytext());
+            { imprimir("Expressao literal", yytext());
             }
           case 50: break;
           case 18: 
@@ -712,31 +721,31 @@ private void imprimir(String descricao, String lexema) {
             }
           case 56: break;
           case 24: 
-            { imprimir("Palavra reservada int", yytext());
+            { imprimir("Número Real", yytext());
             }
           case 57: break;
           case 25: 
-            { imprimir("Palavra reservada for", yytext());
+            { imprimir("Palavra reservada int", yytext());
             }
           case 58: break;
           case 26: 
-            { imprimir("Palavra reservada else", yytext());
+            { imprimir("Palavra reservada for", yytext());
             }
           case 59: break;
           case 27: 
-            { imprimir("Palavra reservada then", yytext());
+            { imprimir("Palavra reservada else", yytext());
             }
           case 60: break;
           case 28: 
-            { imprimir("Palavra reservada real", yytext());
+            { imprimir("Palavra reservada then", yytext());
             }
           case 61: break;
           case 29: 
-            { imprimir("Palavra reservada read", yytext());
+            { imprimir("Palavra reservada real", yytext());
             }
           case 62: break;
           case 30: 
-            { imprimir("Expressao literal", yytext());
+            { imprimir("Palavra reservada read", yytext());
             }
           case 63: break;
           case 31: 

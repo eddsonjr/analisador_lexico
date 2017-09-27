@@ -46,19 +46,18 @@ private void imprimir(String descricao, String lexema) {
 %class LexicalAnalyzer
 %type void
 
-
 BRANCO = [\n| |\t|\r]
 IDENTIFICADOR = [|a-z|A-Z][a-z|A-Z|0-9|]*
-INTEIRO = ((-{1})?\d+)
-REAL =    ((-{1})?(\d+)[.](\d+))
-EXPRESSAOLITERAL = ("(.*?)")
-EXPRESSAOLITERALCOMVALOR = ("(.*?)"[#]((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[#]("(.*?)"))
+INTEIRO = ([-]?\d+)
+REAL =    ([-]?(\d+)[.](\d+))
+EXPRESSAOLITERAL = (['](.*?)['])
+EXPRESSAOLITERALCOMVALOR = ((['](.*?)['])[#]((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[#](['](.*?)[']))
 
 
 
-SOMA = ((((-{1})?(\d+)[.](\d+))|((-{1})?\d+))[+]([(]?((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[)]?))
-SUBTRACAO = ((((-{1})?(\d+)[.](\d+))|((-{1})?\d+))[-]([(]?((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[)]?))
-MULTIPLICACAO = ((((-{1})?(|\d+)[.](\d+))|((-{1})?\d+))[*]([(]?((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[)]?))
+SOMA = "+"
+SUBTRACAO = "-"
+MULTIPLICACAO = "*"
 DIVISAO = "/"
 
 
@@ -97,7 +96,6 @@ TERMINADOR = ";"
 
 
 
-
 {BRANCO}                    { imprimir("Espaco em branco", yytext()); }
 {IDENTIFICADOR}             { imprimir("Identificador", yytext()); }
 {INTEIRO}                   { imprimir("Número Inteiro", yytext()); }
@@ -106,10 +104,10 @@ TERMINADOR = ";"
 
 
 
-{SOMA}                      { imprimir("Operador de soma", yytext()); }
-{SUBTRACAO}                 { imprimir("Operador de subtracao", yytext()); }
-{MULTIPLICACAO}             { imprimir("Operador de multiplicacao", yytext());}
-{DIVISAO}                   { imprimir("Operador de divisao", yytext());}
+{SOMA}                      { imprimir("Operacao de soma", yytext()); }
+{SUBTRACAO}                 { imprimir("Operacao de subtracao", yytext()); }
+{MULTIPLICACAO}             { imprimir("Operacao de multiplicacao", yytext());}
+{DIVISAO}                   { imprimir("Operacao de divisao", yytext());}
 {ATRIBUICAO}                { imprimir("Operador de atribuicao", yytext());}
 {MENOR}                     { imprimir("Operador de menor", yytext());}
 {MAIOR}                     { imprimir("Operador de maior", yytext());}
@@ -123,7 +121,8 @@ TERMINADOR = ";"
 {FECHAMENTOPARENTESES}      { imprimir("Fim expressao", yytext());}
 {COMENTARIO}                { imprimir("Comentario", yytext());}
 {TERMINADOR}                { imprimir("Terminador de instrucao", yytext());}
-
+{EXPRESSAOLITERALCOMVALOR}  { imprimir("Literal com valor", yytext());}
+{EXPRESSAOLITERAL}          { imprimir("Expressao Literal", yytext());}
 
 
 

@@ -53,4 +53,9 @@ Expressoes de teste:
                                     um unico ponto
 
 
+((\d+)\s[+]\s(\d+))  -> identificar espacoes em branco entre o sinal de +
 
+
+
+([-]?\d+[.]\d+)[+]([(]?\d+[.]\d+[)]?) -> soma de numeros reais, podendo ter 
+                                    sinal na frente ou nao
