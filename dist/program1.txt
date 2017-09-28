@@ -1,0 +1,4 @@
+real valor1 = 12.9;
+real valor2 = -9.5;
+real r = ((valor1+valor2)/2);
+print('O valor da media equivale a:'#r#' pontos');

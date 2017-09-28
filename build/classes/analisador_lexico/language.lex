@@ -40,6 +40,10 @@ private void imprimir(String descricao, String lexema) {
         
    }
 
+    
+
+
+
 %}
 
 
@@ -52,7 +56,7 @@ INTEIRO = ([-]?\d+)
 REAL =    ([-]?(\d+)[.](\d+))
 EXPRESSAOLITERAL = (['](.*?)['])
 EXPRESSAOLITERALCOMVALOR = ((['](.*?)['])[#]((((-{1})?(\d+)[.](\d+))|((-{1})?\d+)))[#](['](.*?)[']))
-
+TERMINADOR = ";"
 
 
 SOMA = "+"
@@ -77,8 +81,6 @@ IGUAL = "=="
 DIFERENTE = "!="
 
 
-TERMINADOR = ";"
-
 
 
 %%
@@ -96,7 +98,7 @@ TERMINADOR = ";"
 
 
 
-{BRANCO}                    { imprimir("Espaco em branco", yytext()); }
+{BRANCO}                    {  }
 {IDENTIFICADOR}             { imprimir("Identificador", yytext()); }
 {INTEIRO}                   { imprimir("Número Inteiro", yytext()); }
 {EXPRESSAOLITERAL}          { imprimir("Expressao literal", yytext());}
@@ -123,7 +125,6 @@ TERMINADOR = ";"
 {TERMINADOR}                { imprimir("Terminador de instrucao", yytext());}
 {EXPRESSAOLITERALCOMVALOR}  { imprimir("Literal com valor", yytext());}
 {EXPRESSAOLITERAL}          { imprimir("Expressao Literal", yytext());}
-
 
 
 . { 

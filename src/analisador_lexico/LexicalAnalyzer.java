@@ -34,12 +34,12 @@ class LexicalAnalyzer {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\1\1\11\1\12\1\12\1\11\22\0\1\1\1\25\1\0"+
-    "\1\0\3\0\1\10\1\21\1\22\1\14\1\13\1\0\1\5\1\7"+
-    "\1\15\12\4\1\0\1\26\1\23\1\16\1\24\2\0\32\2\6\0"+
+    "\11\0\1\1\1\11\1\12\1\12\1\11\22\0\1\1\1\26\1\0"+
+    "\1\0\3\0\1\10\1\22\1\23\1\15\1\14\1\0\1\5\1\7"+
+    "\1\16\12\4\1\0\1\13\1\24\1\17\1\25\2\0\32\2\6\0"+
     "\1\40\2\2\1\44\1\31\1\30\1\42\1\35\1\27\2\2\1\32"+
-    "\1\2\1\36\1\41\1\43\1\2\1\37\1\33\1\34\6\2\1\17"+
-    "\1\3\1\20\7\0\1\12\u05da\0\12\6\206\0\12\6\306\0\12\6"+
+    "\1\2\1\36\1\41\1\43\1\2\1\37\1\33\1\34\6\2\1\20"+
+    "\1\3\1\21\7\0\1\12\u05da\0\12\6\206\0\12\6\306\0\12\6"+
     "\u019c\0\12\6\166\0\12\6\166\0\12\6\166\0\12\6\166\0\12\6"+
     "\166\0\12\6\166\0\12\6\166\0\12\6\166\0\12\6\166\0\12\6"+
     "\140\0\12\6\166\0\12\6\106\0\12\6\u0116\0\12\6\106\0\12\6"+
@@ -64,7 +64,7 @@ class LexicalAnalyzer {
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\1\2\1\4\1\5\1\1"+
     "\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15"+
-    "\1\16\1\17\1\1\1\20\7\3\2\0\1\21\1\22"+
+    "\1\16\1\17\1\20\1\1\7\3\2\0\1\21\1\22"+
     "\1\23\1\24\1\25\1\26\1\27\7\3\1\30\1\31"+
     "\1\32\5\3\1\33\1\3\1\34\1\35\1\36\3\3"+
     "\1\37\1\40\1\41";
@@ -96,8 +96,8 @@ class LexicalAnalyzer {
 
   private static final String ZZ_ROWMAP_PACKED_0 =
     "\0\0\0\45\0\45\0\112\0\112\0\157\0\224\0\271"+
-    "\0\45\0\45\0\336\0\u0103\0\45\0\45\0\45\0\45"+
-    "\0\u0128\0\u014d\0\u0172\0\45\0\u0197\0\u01bc\0\u01e1\0\u0206"+
+    "\0\45\0\45\0\45\0\336\0\u0103\0\45\0\45\0\45"+
+    "\0\45\0\u0128\0\u014d\0\u0172\0\u0197\0\u01bc\0\u01e1\0\u0206"+
     "\0\u022b\0\u0250\0\u0275\0\u029a\0\271\0\271\0\45\0\45"+
     "\0\45\0\45\0\45\0\112\0\u02bf\0\u02e4\0\u0309\0\u032e"+
     "\0\u0353\0\u0378\0\u039d\0\u029a\0\112\0\112\0\u03c2\0\u03e7"+
@@ -134,8 +134,8 @@ class LexicalAnalyzer {
     "\1\26\1\27\1\4\1\30\1\31\2\4\1\32\3\4"+
     "\1\33\1\4\47\0\3\4\22\0\16\4\4\0\1\6"+
     "\1\0\1\6\1\34\41\0\1\6\1\0\1\6\36\0"+
-    "\10\35\1\36\2\0\32\35\15\0\1\37\45\0\1\40"+
-    "\44\0\1\41\44\0\1\42\44\0\1\43\30\0\3\4"+
+    "\10\35\1\36\2\0\32\35\16\0\1\37\45\0\1\40"+
+    "\44\0\1\41\44\0\1\42\44\0\1\43\27\0\3\4"+
     "\22\0\1\4\1\44\5\4\1\45\6\4\2\0\3\4"+
     "\22\0\12\4\1\46\3\4\2\0\3\4\22\0\3\4"+
     "\1\47\12\4\2\0\3\4\22\0\5\4\1\50\10\4"+
@@ -195,8 +195,8 @@ class LexicalAnalyzer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\5\1\2\11\2\1\4\11\3\1\1\11"+
-    "\7\1\2\0\1\1\5\11\33\1";
+    "\1\0\2\11\5\1\3\11\2\1\4\11\12\1\2\0"+
+    "\1\1\5\11\33\1";
 
   private static int [] zzUnpackAttribute() {
     int [] result = new int[62];
@@ -310,6 +310,10 @@ private void imprimir(String descricao, String lexema) {
         arquivo.salvarArquivo();
         
    }
+
+    
+
+
 
 
 
@@ -633,7 +637,7 @@ private void imprimir(String descricao, String lexema) {
             }
           case 34: break;
           case 2: 
-            { imprimir("Espaco em branco", yytext());
+            { 
             }
           case 35: break;
           case 3: 
@@ -649,47 +653,47 @@ private void imprimir(String descricao, String lexema) {
             }
           case 38: break;
           case 6: 
-            { imprimir("Operacao de soma", yytext());
+            { imprimir("Terminador de instrucao", yytext());
             }
           case 39: break;
           case 7: 
-            { imprimir("Operacao de multiplicacao", yytext());
+            { imprimir("Operacao de soma", yytext());
             }
           case 40: break;
           case 8: 
-            { imprimir("Operacao de divisao", yytext());
+            { imprimir("Operacao de multiplicacao", yytext());
             }
           case 41: break;
           case 9: 
-            { imprimir("Operador de atribuicao", yytext());
+            { imprimir("Operacao de divisao", yytext());
             }
           case 42: break;
           case 10: 
-            { imprimir("Abertura bloco", yytext());
+            { imprimir("Operador de atribuicao", yytext());
             }
           case 43: break;
           case 11: 
-            { imprimir("Fechamento bloco", yytext());
+            { imprimir("Abertura bloco", yytext());
             }
           case 44: break;
           case 12: 
-            { imprimir("Inicio expressao", yytext());
+            { imprimir("Fechamento bloco", yytext());
             }
           case 45: break;
           case 13: 
-            { imprimir("Fim expressao", yytext());
+            { imprimir("Inicio expressao", yytext());
             }
           case 46: break;
           case 14: 
-            { imprimir("Operador de menor", yytext());
+            { imprimir("Fim expressao", yytext());
             }
           case 47: break;
           case 15: 
-            { imprimir("Operador de maior", yytext());
+            { imprimir("Operador de menor", yytext());
             }
           case 48: break;
           case 16: 
-            { imprimir("Terminador de instrucao", yytext());
+            { imprimir("Operador de maior", yytext());
             }
           case 49: break;
           case 17: 

@@ -1,0 +1,61 @@
+-> Expressoes para verificar valores inteiros e flutuantes
+INTEIRO = [+-]?(0|[1-9][0-9]*)
+REAL =    [+-]?([0-9]*[.])[0-9]+
+
+
+
+
+->Expressao para verificar a soma de dois valores interios, 
+sendo que os valores podem ter ou nao sinal de - na frente do número
+e após o sinal de soma "+", o outro valor pode ou nao estar cercado por 
+parenteses
+([+-]?(0|[1-9][0-9]*)[+]\(?([+-]?(0|[1-9][0-9]*))\)?)
+
+Alguns exemplos:
+2+3
+2+(-2)
+-2+3
+-2+3
+
+
+
+->Expressao para verificar a subtracao de dois valores interios, 
+sendo que os valores podem ter ou nao sinal de - na frente do número e após 
+o sinal de subtracao "-", o outro valor pode ou nao estar cercado por 
+parenteses
+([-]?(0|[1-9][0-9]*)[-]\(?([-]?(0|[1-9][0-9]*))\)?)
+
+Alguns exemplos:
+-2-3
+-2-(-2)
+2-1
+(2-1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expressoes de teste:
+(-?[0-9]+(([.]?)([0-9]+)?)) -> tentativa de quaisquer numeros com ou sem sinal
+                                com ou sem . (inteiros ou reais)
+
+(((-{1})?(\d+)[.](\d+))|((-{1})?\d+)) -> tentativa de identificar numeros 
+                                    inteiros ou reais com ou sem sinal,
+                                    identificando somente um sinal e tambem
+                                    um unico ponto
+
+
+((\d+)\s[+]\s(\d+))  -> identificar espacoes em branco entre o sinal de +
+
+
+
+([-]?\d+[.]\d+)[+]([(]?\d+[.]\d+[)]?) -> soma de numeros reais, podendo ter 
+                                    sinal na frente ou nao
