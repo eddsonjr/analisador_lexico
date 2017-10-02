@@ -10,10 +10,11 @@ jflex-1.6.1.jar. Para adicionar o ele ao classpath do projeto, basta
 voce configurar o projeto usando a opcao da IDE Ferramentas > Bibliotecas,
 onde você podera criar uma nova biblioteca (entitule ela de jflex) e adicione
 o jar contido na pasta /libs. 
+Realize o mesmo procedimento para a lib apache-commons-io (responsável por trabalhar com 
+os arquivos de texto dentro dos programas.)
 
 ATENCAO: Caso você baixe o projeto e ainda o netbeans nao consiga encontrar 
-o aquivo de biblioteca, faca o procedimento acima. 
-
+os arquivos de biblioteca, faca o procedimento acima. 
 
 
 Ainda dentro da pasta raiz do projeto, existe a pasta /dist, que e a 
@@ -57,4 +58,19 @@ acima no codigo].
 ATENCAO: Voce devera realizar os procedimentos acima com relacao ao codigo toda vez que for dar build ou executar o seu projeto, pois a classe LexicalAnalyzer.java e recriada toda vez.
 
 
- 
+
+
+MODO DE OPERAR O PROGRAMA
+
+Dentro da pasta /dist encontra - se o arquivo executavel do java (.jar), entitulado de “analisador_lexico_teste.jar”. Ao chamar o java para executa-lo, voce devera passar o nome de algum arquivo texto que contenha as definicoes da linguagem a ser analisada. Portanto, o modo correto de chamar o programa via terminal e:
+
+
+java -jar analisador_lexico_teste.jar <arquivo.txt>
+
+Onde <arquivo.txt>  e o nome do arquivo que contem as definicoes da linguagem. Toda vez que o programa e executado, ele gera um arquivo entitulado “output.txt”, porem uma vez criado, o mesmo arquivo e atualizado toda vez que o analisador lexico e executado, por tanto, recomenda - se apagar o arquivo antes de executar o analisador.
+
+Voce pode utilizar os arquivos de codigo fonte de testes, que comecam com a sentenca “program”, para testar o analisador.
+
+IMPORTANTE: dentro da pasta ./dist devera ter uma uma pasta /src. A /src nada mais e que uma copia da pasta /src que encontra - se na raiz do projeto. Portanto, copie a pasta /src da raiz do projeto para dentro da pasta /dist [O codigo java esta programado para procurar o arquivo .lex dentro da pasta /src].
+
+
