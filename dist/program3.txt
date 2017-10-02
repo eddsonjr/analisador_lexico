@@ -1,0 +1,11 @@
+int val1 = read();
+int val2 = read();
+
+if(val1 > val2){
+  print('Val1 e maior que val2');
+}elseif(val1 == 0){
+  print('Cuidado vai dar indeterminacao!');
+}else{
+  int result = (val1/val2);
+  print('Resultado: '#result#'valor');
+}

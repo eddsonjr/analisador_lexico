@@ -1,0 +1,42 @@
+int : Palavra reservada int
+a : Identificador
+= : Operador de atribuicao
+1 : Número Inteiro
+; : Terminador de instrucao
+int : Palavra reservada int
+b : Identificador
+= : Operador de atribuicao
+-4 : Número Inteiro
+; : Terminador de instrucao
+int : Palavra reservada int
+c : Identificador
+= : Operador de atribuicao
+-1 : Número Inteiro
++ : Operacao de soma
+( : Inicio expressao
+-4 : Número Inteiro
+) : Fim expressao
+; : Terminador de instrucao
+if : Palavra reservada if
+( : Inicio expressao
+c : Identificador
+>= : Operador de maior ou igual
+-5 : Número Inteiro
+) : Fim expressao
+{ : Abertura bloco
+print : Palavra reservada print
+( : Inicio expressao
+'Tudo ok!' : Expressao literal
+) : Fim expressao
+; : Terminador de instrucao
+} : Fechamento bloco
+else : Palavra reservada else
+{ : Abertura bloco
+print : Palavra reservada print
+( : Inicio expressao
+'Vai dar erro na proxima linha por causa de aspas duplas' : Expressao literal
+) : Fim expressao
+; : Terminador de instrucao
+print : Palavra reservada print
+( : Inicio expressao
+ERROR: LEXEMA NAO FAZ PARTE DA LINGUAGEM: "

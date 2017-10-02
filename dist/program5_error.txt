@@ -1,0 +1,10 @@
+int a = 1;
+int b = -4;
+int c = -1+(-4);
+
+if(c >= -5){
+  print('Tudo ok!');
+}else{
+  print('Vai dar erro na proxima linha por causa de aspas duplas');
+  print("Deu erro aqui por causa das aspas duplas");
+}
